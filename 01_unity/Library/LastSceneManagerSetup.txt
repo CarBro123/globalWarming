@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/Demo.unity
+- path: Assets/TableToVariable/EmissionsTable.unity
   isLoaded: 1
   isActive: 1
