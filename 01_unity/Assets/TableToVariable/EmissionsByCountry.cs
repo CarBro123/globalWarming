@@ -11,16 +11,9 @@ public class EmissionsByCountry : MonoBehaviour
     {
         Load(file);
 
-        Debug.Log(FindAll_Country("Germany").ToArray()[0].Year);
-        Debug.Log(FindAll_Country("Germany").ToArray()[0].Total);
-        Debug.Log(FindAll_Country("Germany").ToArray()[1].Year);
-        Debug.Log(FindAll_Country("Germany").ToArray()[1].Total);
-        Debug.Log(FindAll_Country("Germany").ToArray()[2].Year);
-        Debug.Log(FindAll_Country("Germany").ToArray()[2].Total);
-        Debug.Log(FindAll_Country("Germany").ToArray()[3].Year);
-        Debug.Log(FindAll_Country("Germany").ToArray()[3].Total);
-        Debug.Log(FindAll_Country("Germany").ToArray()[4].Year);
-        Debug.Log(FindAll_Country("Germany").ToArray()[4].Total);
+        //FindAll_Year("1999").ForEach(item => Debug.Log(item.Country + ", " + item.Total));
+        Debug.Log(Find_Total_By_Year_Country("1999", "Germany").Total);
+
     }
 
     public class Row
@@ -97,4 +90,14 @@ public class EmissionsByCountry : MonoBehaviour
         return rowList.FindAll(x => x.Total == find);
     }
 
+    /// <summary>
+    /// NEW FUNCTION TO FIND TOTAL EMISSIONS BY YEAR AND COUNTRY
+    /// </summary>
+    /// <param name="find"></param>
+    /// <param name="country"></param>
+    /// <returns></returns>
+    public Row Find_Total_By_Year_Country(string find, string country)
+    {
+        return rowList.Find(x => x.Year == find && x.Country == country);
+    }
 }
