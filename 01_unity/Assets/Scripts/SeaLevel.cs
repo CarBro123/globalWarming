@@ -15,6 +15,8 @@ public class SeaLevel : MonoBehaviour
     float newY = 0;
     float oldY = 0;
     float percentage;
+    int year = 0;
+    int yearold = 0;
 
     bool islerping;
     float timeStartedLerping;
@@ -94,30 +96,37 @@ public class SeaLevel : MonoBehaviour
         Array[67] = 140f;
     }
 
-    // Update is called once per frame
-    public void WaterLevel(int year)
+    void FixedUpdate()
     {
-        islerping = true;                               //Lerp Aktivieren
-        timeStartedLerping = Time.time;
-        newY = Array[(year - 1950)];                    //Neue Y Koordinate berechnen
-        newY = newY / 100;
-        if (islerping)
+        if (year <= 2017 && year >= 1950 && yearold < year)                        //Nur wenn in Wertebereich des Arrays
         {
-            ChangeLevel();
+            islerping = true;                               //Lerp Aktivieren
+            timeStartedLerping = Time.time;
+            newY = Array[(year - 1950)];                    //Neue Y Koordinate berechnen
+            newY = newY / 100;
+            yearold = year;
         }
+
+        if (islerping)                                          //y Position ändern
+        {
+            float timeSinceStart = Time.time - timeStartedLerping;
+            float percentage = timeSinceStart / (1.0f * 0.9f);
+
+            this.transform.position = new Vector3(0, Mathf.Lerp(oldY, newY, percentage), 0);    //Positionsänderung
+
+            if (percentage >= 1.0f)                                                             //Exit
+            {
+                islerping = false;
+                oldY = newY;
+            }
+        }
+
     }
 
-    public void ChangeLevel()
+    public void WaterLevel(int bingo)
     {
-        float timeSinceStart = Time.time - timeStartedLerping;
-        float percentage = timeSinceStart / (5.0f - 0.9f);
+        year = bingo;
+        yearold = bingo - 1;
 
-        this.transform.position = new Vector3(0, Mathf.Lerp(oldY, newY, percentage), 0);    //Positionsänderung
-
-        if (percentage >= 1.0f)                                                             //Exit
-        {
-            islerping = false;
-            oldY = newY;
-        }
     }
 }
