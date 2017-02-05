@@ -34,7 +34,7 @@ public class Manager : MonoBehaviour {
 	void Update () {
         if(year == 1950 | year != alreadyUpdated)
         {
-            SeaLevel.GetComponent<SeaLevel>().WaterLevel(year);
+            SeaLevel.GetComponent<SeaLevel>().WaterLevel(year,yearInSec);
 
             alreadyUpdated = year;
         }

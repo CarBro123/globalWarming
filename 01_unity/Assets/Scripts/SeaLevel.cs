@@ -17,6 +17,7 @@ public class SeaLevel : MonoBehaviour
     float percentage;
     int year = 0;
     int yearold = 0;
+    int yearinsec = 5;
 
     bool islerping;
     float timeStartedLerping;
@@ -110,7 +111,7 @@ public class SeaLevel : MonoBehaviour
         if (islerping)                                          //y Position ändern
         {
             float timeSinceStart = Time.time - timeStartedLerping;
-            float percentage = timeSinceStart / (1.0f * 0.9f);
+            float percentage = timeSinceStart / (yearinsec * 0.9f);
 
             this.transform.position = new Vector3(0, Mathf.Lerp(oldY, newY, percentage), 0);    //Positionsänderung
 
@@ -123,10 +124,11 @@ public class SeaLevel : MonoBehaviour
 
     }
 
-    public void WaterLevel(int bingo)
+    public void WaterLevel(int bingo, int bongo)
     {
         year = bingo;
         yearold = bingo - 1;
+        yearinsec = bongo;
 
     }
 }
