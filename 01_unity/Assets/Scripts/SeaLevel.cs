@@ -1,17 +1,16 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.Events;
+using System;
+using UnityEngine.SceneManagement;
 
-public class SeaLevel : MonoBehaviour {
+public class SeaLevel : MonoBehaviour
+{
 
 
     float[] Array = new float[68];
-
-    [Range(1950,2017)]
-    public int year = 1950;
-    int time= 0;
-    int timetrigger=1;
-    int yearInSec = 5;
 
     float newY = 0;
     float oldY = 0;
@@ -23,7 +22,8 @@ public class SeaLevel : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {             //WerteArray für Wasserstand
+    void Start()
+    {             //WerteArray für Wasserstand
         Array[0] = 0;
         Array[1] = 9.5f;
         Array[2] = 6.9f;
@@ -95,38 +95,29 @@ public class SeaLevel : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void FixedUpdate ()
+    public void WaterLevel(int year)
     {
-        if (year <= 2017 && year>= 1950)                        //Nur wenn in Wertebereich des Arrays
+        islerping = true;                               //Lerp Aktivieren
+        timeStartedLerping = Time.time;
+        newY = Array[(year - 1950)];                    //Neue Y Koordinate berechnen
+        newY = newY / 100;
+        if (islerping)
         {
-            time = (int)Time.time;                              //IntTimer
-
-            if (time == timetrigger)                            //Sekundentimer mit Anfang des neuen Jahres vergleichen
-            {
-                print(year);                                    //Jahresausgabe
-
-                islerping = true;                               //Lerp Aktivieren
-                timeStartedLerping = Time.time;                 
-                newY = Array[(year - 1950)];                    //Neue Y Koordinate berechnen
-                newY = newY / 100;
-                year++; ;                                       //nächstes Jahr
-                timetrigger=timetrigger+yearInSec;              //Sekundentimer um Jahreslänge erweitern
-            }
+            ChangeLevel();
         }
+    }
 
-        if (islerping)                                          //y Position ändern
+    public void ChangeLevel()
+    {
+        float timeSinceStart = Time.time - timeStartedLerping;
+        float percentage = timeSinceStart / (5.0f - 0.9f);
+
+        this.transform.position = new Vector3(0, Mathf.Lerp(oldY, newY, percentage), 0);    //Positionsänderung
+
+        if (percentage >= 1.0f)                                                             //Exit
         {
-            float timeSinceStart = Time.time - timeStartedLerping;      
-            float percentage = timeSinceStart / (yearInSec - 0.9f);
-
-            this.transform.position = new Vector3(0, Mathf.Lerp(oldY, newY, percentage), 0);    //Positionsänderung
-
-            if (percentage >= 1.0f)                                                             //Exit
-            {
-                islerping = false;
-                oldY = newY;
-            }
+            islerping = false;
+            oldY = newY;
         }
-
     }
 }
