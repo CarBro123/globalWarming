@@ -17,6 +17,6 @@ public class Ball : MonoBehaviour {
 
     public void moveThis(int year, float emissions, float temperature)
     {
-        this.transform.position = new Vector3(-emissions/5000+0.6f, temperature/10-0.092f, -2);
+        this.transform.position = new Vector3(-emissions/2000+0.6f+1.7f, temperature/10-0.092f, -2);
     }
 }
