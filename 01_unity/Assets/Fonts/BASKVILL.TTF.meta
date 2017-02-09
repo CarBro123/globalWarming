@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: c14b20933f27f9d46bef26b1ae90ba3b
+timeCreated: 1486140418
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Baskerville Old Face
+  fontNames:
+  - Baskerville Old Face
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

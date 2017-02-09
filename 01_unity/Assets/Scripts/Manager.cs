@@ -14,6 +14,7 @@ public class Manager : MonoBehaviour {
 	public int yearInSec = 5;
 
 	public GameObject SeaLevel;
+	public UIWidgetsSamples.ListViewVariableHeight newsTicker;
 
     public GameObject Deutschland;
     public GameObject Indien;
@@ -28,7 +29,7 @@ public class Manager : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-
+    	newsTicker.startYear = year;
         StartCoroutine("YearCount");
 	}
 	
@@ -49,6 +50,7 @@ public class Manager : MonoBehaviour {
         {
             yield return new WaitForSeconds(yearInSec);
             year++;
+            newsTicker.OnYearChange(year);
             Debug.Log(year);
         }
     }
