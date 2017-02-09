@@ -17,19 +17,19 @@ public class TastaturEingaben : MonoBehaviour {
         {
             Debug.Log("pause");
             //stop coroutines
-            //managerObject.SendMessage("stopCounter");
+            managerObject.SendMessage("stopCounter");
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
             Debug.Log("forward");
             //startCoroutine raufzählen
-            //managerObject.SendMessage("raufzaehlen");
+            managerObject.SendMessage("raufzaehlen");
         }
         if (Input.GetKeyDown(KeyCode.B))
         {
             Debug.Log("backward");
             //startCoroutine runterzählen
-            //managerObject.SendMessage("runterzaehlen");
+            managerObject.SendMessage("runterzaehlen");
         }
 
     }
