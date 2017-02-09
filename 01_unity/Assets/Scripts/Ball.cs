@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
+    
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +14,9 @@ public class Ball : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void moveThis(int year, float emissions, float temperature)
+    {
+        this.transform.position = new Vector3(emissions, temperature, 0);
+    }
 }

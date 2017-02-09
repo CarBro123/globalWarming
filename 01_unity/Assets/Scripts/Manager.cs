@@ -26,16 +26,18 @@ public class Manager : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
+
         StartCoroutine("YearCount");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if(year == 1950 | year != alreadyUpdated)
+        if(year != alreadyUpdated | year == 1950)
         {
             SeaLevel.GetComponent<SeaLevel>().WaterLevel(year,yearInSec);
-
+            MoveBalls(year);
             alreadyUpdated = year;
         }
 
@@ -49,5 +51,41 @@ public class Manager : MonoBehaviour {
             year++;
             Debug.Log(year);
         }
+    }
+
+    void MoveBalls(int year)
+    {
+        float deutschlandEmissionen = float.Parse(EmissionsByCountry.Find_Total_By_Year_Country(year.ToString(), "Germany").Total);
+        float deutschlandTemperatur = float.Parse(TemperaturesByCountry.Find_Temperature_By_Year_Country(year + "-08-01", "Germany").AverageTemperature);
+        Deutschland.GetComponent<Ball>().moveThis(year, deutschlandEmissionen, deutschlandTemperatur);
+
+        float indienEmissionen = float.Parse(EmissionsByCountry.Find_Total_By_Year_Country(year.ToString(), "India").Total);
+        float indienTemperatur = float.Parse(TemperaturesByCountry.Find_Temperature_By_Year_Country(year + "-08-01", "India").AverageTemperature);
+        Indien.GetComponent<Ball>().moveThis(year, indienEmissionen, indienTemperatur);
+
+        float usaEmissionen = float.Parse(EmissionsByCountry.Find_Total_By_Year_Country(year.ToString(), "USA").Total);
+        float usaTemperatur = float.Parse(TemperaturesByCountry.Find_Temperature_By_Year_Country(year + "-08-01", "USA").AverageTemperature);
+        USA.GetComponent<Ball>().moveThis(year, usaEmissionen, usaTemperatur);
+
+        float russlandEmissionen = float.Parse(EmissionsByCountry.Find_Total_By_Year_Country(year.ToString(), "Russia").Total);
+        float russlandTemperatur = float.Parse(TemperaturesByCountry.Find_Temperature_By_Year_Country(year + "-08-01", "Russia").AverageTemperature);
+        Russland.GetComponent<Ball>().moveThis(year, russlandEmissionen, russlandTemperatur);
+
+        float brasilienEmissionen = float.Parse(EmissionsByCountry.Find_Total_By_Year_Country(year.ToString(), "Brasil").Total);
+        float brasilienTemperatur = float.Parse(TemperaturesByCountry.Find_Temperature_By_Year_Country(year + "-08-01", "Brasil").AverageTemperature);
+        Brasilien.GetComponent<Ball>().moveThis(year, brasilienEmissionen, brasilienTemperatur);
+
+        float chinaEmissionen = float.Parse(EmissionsByCountry.Find_Total_By_Year_Country(year.ToString(), "China").Total);
+        float chinaTemperatur = float.Parse(TemperaturesByCountry.Find_Temperature_By_Year_Country(year + "-08-01", "China").AverageTemperature);
+        China.GetComponent<Ball>().moveThis(year, chinaEmissionen, chinaTemperatur);
+
+        float australienEmissionen = float.Parse(EmissionsByCountry.Find_Total_By_Year_Country(year.ToString(), "Australia").Total);
+        float australienTemperatur = float.Parse(TemperaturesByCountry.Find_Temperature_By_Year_Country(year + "-08-01", "Australia").AverageTemperature);
+        Australien.GetComponent<Ball>().moveThis(year, australienEmissionen, australienTemperatur);
+
+        float aegyptenEmissionen = float.Parse(EmissionsByCountry.Find_Total_By_Year_Country(year.ToString(), "Egypt").Total);
+        float aegyptenTemperatur = float.Parse(TemperaturesByCountry.Find_Temperature_By_Year_Country(year + "-08-01", "Egypt").AverageTemperature);
+        Aegypten.GetComponent<Ball>().moveThis(year, aegyptenEmissionen, aegyptenTemperatur);
+
     }
 }

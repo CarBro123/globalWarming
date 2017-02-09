@@ -19,10 +19,10 @@ public class TemperaturesByCountry : MonoBehaviour
     {
         Load(file);
 
-        Debug.Log(Find_Temperature_By_Year_Country("1999-08-01", "Germany").AverageTemperature);
+        //Debug.Log(Find_Temperature_By_Year_Country("1999-08-01", "Germany").AverageTemperature);
     }
 
-    List<Row> rowList = new List<Row>();
+    static List<Row> rowList = new List<Row>();
     bool isLoaded = false;
 
     public bool IsLoaded()
@@ -96,7 +96,7 @@ public class TemperaturesByCountry : MonoBehaviour
     {
         return rowList.FindAll(x => x.Country == find);
     }
-    public Row Find_Temperature_By_Year_Country(string find, string country)
+    public static Row Find_Temperature_By_Year_Country(string find, string country)
     {
         return rowList.Find(x => x.dt == find && x.Country == country);
     }

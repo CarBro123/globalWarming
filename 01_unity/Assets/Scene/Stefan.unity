@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 3207681}
   - component: {fileID: 3207680}
   - component: {fileID: 3207679}
+  - component: {fileID: 3207682}
   m_Layer: 0
   m_Name: Russland
   m_TagString: Untagged
@@ -119,7 +120,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 3207677}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.617, y: 0.321, z: 0}
+  m_LocalPosition: {x: 0.6, y: -0.092, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1941861650}
@@ -178,6 +179,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 3207677}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &3207682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 3207677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def5203e3b899cd4c912ca55814b3ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &16174134
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,6 +336,7 @@ GameObject:
   - component: {fileID: 175232098}
   - component: {fileID: 175232097}
   - component: {fileID: 175232096}
+  - component: {fileID: 175232099}
   m_Layer: 0
   m_Name: Agypten
   m_TagString: Untagged
@@ -339,7 +352,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 175232094}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.43, y: 1.11, z: -0}
+  m_LocalPosition: {x: 0.6, y: -0.092, z: -0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1941861650}
@@ -398,6 +411,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 175232094}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &175232099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 175232094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def5203e3b899cd4c912ca55814b3ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &206313931
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +582,7 @@ GameObject:
   - component: {fileID: 240663564}
   - component: {fileID: 240663563}
   - component: {fileID: 240663562}
+  - component: {fileID: 240663565}
   m_Layer: 0
   m_Name: China
   m_TagString: Untagged
@@ -573,7 +598,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 240663560}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.17, y: 0.93, z: -0}
+  m_LocalPosition: {x: 0.6, y: -0.092, z: -0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1941861650}
@@ -632,6 +657,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 240663560}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &240663565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 240663560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def5203e3b899cd4c912ca55814b3ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &258188414
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +680,7 @@ GameObject:
   - component: {fileID: 258188418}
   - component: {fileID: 258188417}
   - component: {fileID: 258188416}
+  - component: {fileID: 258188419}
   m_Layer: 0
   m_Name: Australien
   m_TagString: Untagged
@@ -659,7 +696,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 258188414}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.06, y: 0.289, z: -0}
+  m_LocalPosition: {x: 0.6, y: -0.092, z: -0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1941861650}
@@ -718,6 +755,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 258188414}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &258188419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 258188414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def5203e3b899cd4c912ca55814b3ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &380961319
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +778,7 @@ GameObject:
   - component: {fileID: 380961323}
   - component: {fileID: 380961322}
   - component: {fileID: 380961321}
+  - component: {fileID: 380961324}
   m_Layer: 0
   m_Name: Brasilien
   m_TagString: Untagged
@@ -745,7 +794,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 380961319}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.242, y: 1.916, z: -0}
+  m_LocalPosition: {x: 0.6, y: -0.092, z: -0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1941861650}
@@ -804,6 +853,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 380961319}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &380961324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 380961319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def5203e3b899cd4c912ca55814b3ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &405064859
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +1041,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a25aeda19117c0408b9672f7325a6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  year: 1950
 --- !u!1 &492935829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,6 +1512,83 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &985811824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 985811828}
+  - component: {fileID: 985811827}
+  - component: {fileID: 985811826}
+  - component: {fileID: 985811825}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &985811825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 985811824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc44b5b40cb08c48b5a456422f082e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  file: {fileID: 4900000, guid: 0e43c786bded1084d86269927c9b9a44, type: 3}
+--- !u!114 &985811826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 985811824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc53c13ed7fb0394ca78b6ab26d147d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  file: {fileID: 4900000, guid: 99cfd042e781b8347882b467ddc5c604, type: 3}
+--- !u!114 &985811827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 985811824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263653a4e400e964da990294c0640397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  year: 1950
+  yearInSec: 5
+  SeaLevel: {fileID: 441829724}
+  Deutschland: {fileID: 1946606965}
+  Indien: {fileID: 1910354554}
+  USA: {fileID: 1330062735}
+  Russland: {fileID: 3207677}
+  Brasilien: {fileID: 380961319}
+  China: {fileID: 240663560}
+  Australien: {fileID: 258188414}
+  Aegypten: {fileID: 175232094}
+--- !u!4 &985811828
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 985811824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6255498, y: -2.0642881, z: -5.5790734}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1329971372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,6 +1682,7 @@ GameObject:
   - component: {fileID: 1330062739}
   - component: {fileID: 1330062738}
   - component: {fileID: 1330062737}
+  - component: {fileID: 1330062740}
   m_Layer: 0
   m_Name: USA
   m_TagString: Untagged
@@ -1561,7 +1698,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1330062735}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.8, y: 0.727, z: -0}
+  m_LocalPosition: {x: 0.6, y: -0.092, z: -0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1941861650}
@@ -1620,6 +1757,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1330062735}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1330062740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330062735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def5203e3b899cd4c912ca55814b3ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1370256914
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,6 +2578,7 @@ GameObject:
   - component: {fileID: 1910354558}
   - component: {fileID: 1910354557}
   - component: {fileID: 1910354556}
+  - component: {fileID: 1910354559}
   m_Layer: 0
   m_Name: Indien
   m_TagString: Untagged
@@ -2445,7 +2594,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1910354554}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.809, y: 1.59, z: 0}
+  m_LocalPosition: {x: 0.6, y: -0.092, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1941861650}
@@ -2504,6 +2653,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1910354554}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1910354559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1910354554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def5203e3b899cd4c912ca55814b3ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1941861649
 GameObject:
   m_ObjectHideFlags: 0
@@ -2554,6 +2714,7 @@ GameObject:
   - component: {fileID: 1946606969}
   - component: {fileID: 1946606968}
   - component: {fileID: 1946606967}
+  - component: {fileID: 1946606970}
   m_Layer: 0
   m_Name: Deutschland
   m_TagString: Untagged
@@ -2569,7 +2730,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1946606965}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.825, y: 1.862, z: -0}
+  m_LocalPosition: {x: 0.6, y: -0.092, z: -0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1941861650}
@@ -2628,6 +2789,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1946606965}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1946606970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1946606965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def5203e3b899cd4c912ca55814b3ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2012787038
 GameObject:
   m_ObjectHideFlags: 0

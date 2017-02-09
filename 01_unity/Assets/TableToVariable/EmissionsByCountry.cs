@@ -12,7 +12,7 @@ public class EmissionsByCountry : MonoBehaviour
         Load(file);
 
         //FindAll_Year("1999").ForEach(item => Debug.Log(item.Country + ", " + item.Total));
-        Debug.Log(Find_Total_By_Year_Country("1999", "Germany").Total);
+        //Debug.Log(Find_Total_By_Year_Country("1999", "Germany").Total);
 
     }
 
@@ -24,7 +24,7 @@ public class EmissionsByCountry : MonoBehaviour
 
     }
 
-    List<Row> rowList = new List<Row>();
+    static List<Row> rowList = new List<Row>();
     bool isLoaded = false;
 
     public bool IsLoaded()
@@ -96,7 +96,7 @@ public class EmissionsByCountry : MonoBehaviour
     /// <param name="find"></param>
     /// <param name="country"></param>
     /// <returns></returns>
-    public Row Find_Total_By_Year_Country(string find, string country)
+    public static Row Find_Total_By_Year_Country(string find, string country)
     {
         return rowList.Find(x => x.Year == find && x.Country == country);
     }
