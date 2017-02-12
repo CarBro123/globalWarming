@@ -12,8 +12,9 @@ public class Manager : MonoBehaviour {
 	public int year = 1950;
     int alreadyUpdated;
 	public int yearInSec = 5;
+	[HideInInspector] public bool isPaused = true;
 
-	public GameObject SeaLevel;
+	public SeaLevel seaLevel;
 	public UIWidgetsSamples.ListViewVariableHeight newsTicker;
 
     public GameObject Deutschland;
@@ -30,58 +31,46 @@ public class Manager : MonoBehaviour {
     void Start ()
     {
     	newsTicker.startYear = year;
-        StartCoroutine("YearCount");
+        StartCoroutine(YearLoop());
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
-        if(year != alreadyUpdated | year == 1950)
-        {
-            SeaLevel.GetComponent<SeaLevel>().WaterLevel(year,yearInSec);
-            MoveBalls(year);
-            alreadyUpdated = year;
-        }
-
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			isPaused = !isPaused;
+		}
 	}
 
-    IEnumerator YearCount()
+	public void IncreaseYear () {
+		if (year < 2017) {
+			year++;
+			UpdateScene();
+		} 
+	}
+
+	public void DecreaseYear () {
+		if (year > 1950) {
+			year--;
+			UpdateScene();
+		} 
+	}
+
+	public void UpdateScene () {
+	    seaLevel.WaterLevel(year,yearInSec);
+		if (year < 2014) MoveBalls(year);
+		newsTicker.OnYearChange(year);
+		Debug.Log(year);
+	}
+
+    IEnumerator YearLoop ()
     {
         while (year < 2017)
         {
             yield return new WaitForSeconds(yearInSec);
-            year++;
-            newsTicker.OnYearChange(year);
-            Debug.Log(year);
+            while (isPaused) yield return new WaitForSeconds(0.5f);
+            IncreaseYear();
         }
     }
 
-    IEnumerator YearCountDown()
-    {
-        while (year > 1950)
-        {
-            yield return new WaitForSeconds(yearInSec);
-            year--;
-            Debug.Log(year);
-        }
-    }
-
-    public void raufzaehlen()
-    {
-        stopCounter();
-        StartCoroutine("YearCount");
-    }
-
-    public void runterzaehlen()
-    {
-        stopCounter();
-        StartCoroutine("YearCountDown");
-    }
-
-    public void stopCounter()
-    {
-        StopCoroutine("YearCount");
-        StopCoroutine("YearCountDown");
-    }
 
     void MoveBalls(int year)
     {

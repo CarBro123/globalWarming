@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TimeInteraction : MonoBehaviour {
 
 	SteamVR_TrackedObject trackedObj;
+	public Manager manager;
 	public RawImage playButton;
 	public RawImage pauseButton;
 	public RawImage backButton;
@@ -15,6 +16,7 @@ public class TimeInteraction : MonoBehaviour {
 	private SteamVR_Controller.Device device;
 	private bool isPaused = true;
 	private bool menuPressed = false;
+	private float cooldown = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +26,10 @@ public class TimeInteraction : MonoBehaviour {
 		backButton.color = normal;
 		pauseButton.enabled = false;
 		trackedObj = GetComponent<SteamVR_TrackedObject>();
+	}
+
+	void Update () {
+		cooldown -= Time.deltaTime;
 	}
 	
 
@@ -36,11 +42,12 @@ public class TimeInteraction : MonoBehaviour {
 				playButton.color = normal;
 				playButton.enabled = false;
 				pauseButton.enabled = true;
-			
+				manager.isPaused = false;
 			} else {
 				pauseButton.color = normal;
 				pauseButton.enabled = false;
 				playButton.enabled = true;
+				manager.isPaused = true;
 			}
 
 			isPaused = !isPaused;
@@ -57,13 +64,17 @@ public class TimeInteraction : MonoBehaviour {
 			Vector2 touchpad = (device.GetAxis (Valve.VR.EVRButtonId.k_EButton_Axis0));
 
 			// Forward Button gedrückt
-			if (touchpad.x > 0.15f) {
+			if (touchpad.x > 0.15f && cooldown < 0) {
 				forwardButton.color = selected;
+				manager.IncreaseYear();
+				cooldown = 0.1f;
 			}
 
 			// Backward Button gedrückt
-			if (touchpad.x < -0.15f) {
+			if (touchpad.x < -0.15f && cooldown < 0) {
 				backButton.color = selected;
+				manager.DecreaseYear();
+				cooldown = 0.1f;
 			}
 		}
 
