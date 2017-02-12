@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/Stefan.unity
+- path: Assets/Scene/Carsten.unity
   isLoaded: 1
   isActive: 1
