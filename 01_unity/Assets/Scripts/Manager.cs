@@ -32,6 +32,7 @@ public class Manager : MonoBehaviour {
     {
     	newsTicker.startYear = year;
         StartCoroutine(YearLoop());
+		MoveBalls(year);
 	}
 
 	void Update () {
