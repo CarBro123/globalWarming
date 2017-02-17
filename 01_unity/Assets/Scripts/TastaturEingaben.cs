@@ -23,13 +23,13 @@ public class TastaturEingaben : MonoBehaviour {
         {
             Debug.Log("forward");
             //startCoroutine raufzählen
-            managerObject.SendMessage("raufzaehlen");
+            managerObject.SendMessage("IncreaseYear");
         }
         if (Input.GetKeyDown(KeyCode.B))
         {
             Debug.Log("backward");
             //startCoroutine runterzählen
-            managerObject.SendMessage("runterzaehlen");
+            managerObject.SendMessage("DecreaseYear");
         }
 
     }
