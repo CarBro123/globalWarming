@@ -71,11 +71,11 @@ public class Manager : MonoBehaviour {
 
     IEnumerator YearLoop ()
     {
-        while (year < 2017)
+        while (true)
         {
             yield return new WaitForSeconds(yearInSec);
             while (isPaused) yield return new WaitForSeconds(0.5f);
-            IncreaseYear();
+            if (year < 2017) IncreaseYear();
         }
     }
 
