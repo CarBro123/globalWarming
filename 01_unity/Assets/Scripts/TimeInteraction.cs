@@ -15,11 +15,12 @@ public class TimeInteraction : MonoBehaviour {
 	public Color selected;
 	private SteamVR_Controller.Device device;
 	private bool isPaused = true;
-	private bool menuPressed = false;
+	private AudioSource source;
 	private float cooldown = 0;
 
 	// Use this for initialization
 	void Start () {
+		source = GetComponent<AudioSource>();
 		playButton.color = normal;
 		pauseButton.color = normal;
 		forwardButton.color = normal;
@@ -36,8 +37,8 @@ public class TimeInteraction : MonoBehaviour {
 	void FixedUpdate () {
 		device = SteamVR_Controller.Input((int)trackedObj.index);
 
-		if (device.GetPressUp (SteamVR_Controller.ButtonMask.ApplicationMenu)) {
-
+		if (device.GetTouchUp (SteamVR_Controller.ButtonMask.ApplicationMenu)) {
+			source.Play();
 			if (isPaused) {
 				playButton.color = normal;
 				playButton.enabled = false;
@@ -54,13 +55,14 @@ public class TimeInteraction : MonoBehaviour {
 		}
 
 		if (device.GetPressDown (SteamVR_Controller.ButtonMask.ApplicationMenu)) {
+			
 			if (isPaused) playButton.color = selected;
 			else pauseButton.color = selected;
 		}
 
 
 		if (device.GetPressDown (SteamVR_Controller.ButtonMask.Touchpad)) {
-
+			source.Play();
 			Vector2 touchpad = (device.GetAxis (Valve.VR.EVRButtonId.k_EButton_Axis0));
 
 			// Forward Button gedrückt

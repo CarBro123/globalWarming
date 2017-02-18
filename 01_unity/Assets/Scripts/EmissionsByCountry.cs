@@ -7,7 +7,7 @@ public class EmissionsByCountry : MonoBehaviour
 {
 
     public TextAsset file;
-    void Start()
+    void Awake()
     {
         Load(file);
 

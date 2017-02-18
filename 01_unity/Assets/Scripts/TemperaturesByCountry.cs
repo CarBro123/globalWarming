@@ -15,7 +15,7 @@ public class TemperaturesByCountry : MonoBehaviour
     }
 
     public TextAsset file;
-    void Start()
+    void Awake()
     {
         Load(file);
 

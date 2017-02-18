@@ -10,10 +10,12 @@ namespace UIWidgetsSamples {
 		private int ind;
 		private int firstYear;
 		private int current;
+		private AudioSource source;
 
 //		private int temp = 1954;
 
 		void Start () {
+			source = GetComponent<AudioSource>();
 			ind = GetItemsCount();
 			years = new int[ind];
 			for (int i = 0; i < GetItemsCount(); i++) {
@@ -69,6 +71,7 @@ namespace UIWidgetsSamples {
 						ind = i;
 						current = year;
 						StartCoroutine (Scroll ());
+						source.Play();
 					}
 				}
 			} else if (year < current && year > firstYear) {

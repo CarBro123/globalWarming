@@ -30,13 +30,16 @@ public class Manager : MonoBehaviour {
 
     int cloneCounter = 1950;
 
+    void Awake () {
+		MoveBalls(year);
+    }
 
     // Use this for initialization
     void Start ()
     {
     	newsTicker.startYear = year;
         StartCoroutine(YearLoop());
-		MoveBalls(year);
+		
 	}
 
 	void Update () {
