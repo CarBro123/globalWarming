@@ -109,66 +109,8 @@ public class Manager : MonoBehaviour {
         float aegyptenEmissionen = float.Parse(EmissionsByCountry.Find_Total_By_Year_Country(year.ToString(), "Egypt").Total);
         float aegyptenTemperatur = float.Parse(TemperaturesByCountry.Find_Temperature_By_Year_Country(year + "-08-01", "Egypt").AverageTemperature);
         Aegypten.GetComponent<Ball>().moveThis(year, aegyptenEmissionen, aegyptenTemperatur);
-
-        cloneSpheres(0.05f);
         
 
     }
 
-    void cloneSpheres(float alpha)
-    {
-        //clone if not cloned before
-        if (cloneCounter <= year)
-        {
-            GameObject cloneDeutschland = Instantiate(Deutschland);
-            Color colorDeutschland = cloneDeutschland.GetComponent<Renderer>().material.color;
-            colorDeutschland.a = alpha;
-            cloneDeutschland.GetComponent<Renderer>().material.color = colorDeutschland;
-            cloneDeutschland.transform.position = Deutschland.transform.position;
-
-            GameObject cloneUSA = Instantiate(USA);
-            Color colorUSA = cloneUSA.GetComponent<Renderer>().material.color;
-            colorUSA.a = alpha;
-            cloneUSA.GetComponent<Renderer>().material.color = colorUSA;
-            cloneUSA.transform.position = USA.transform.position;
-
-            GameObject cloneIndien = Instantiate(Indien);
-            Color colorIndien = cloneIndien.GetComponent<Renderer>().material.color;
-            colorIndien.a = alpha;
-            cloneIndien.GetComponent<Renderer>().material.color = colorIndien;
-            cloneIndien.transform.position = Indien.transform.position;
-
-            GameObject cloneRussland = Instantiate(Russland);
-            Color colorRussland = cloneRussland.GetComponent<Renderer>().material.color;
-            colorRussland.a = alpha;
-            cloneRussland.GetComponent<Renderer>().material.color = colorRussland;
-            cloneRussland.transform.position = Russland.transform.position;
-
-            GameObject cloneBrasilien = Instantiate(Brasilien);
-            Color colorBrasilien = cloneRussland.GetComponent<Renderer>().material.color;
-            colorBrasilien.a = alpha;
-            cloneBrasilien.GetComponent<Renderer>().material.color = colorBrasilien;
-            cloneBrasilien.transform.position = Brasilien.transform.position;
-
-            GameObject cloneAustralien = Instantiate(Australien);
-            Color colorAustralien = cloneAustralien.GetComponent<Renderer>().material.color;
-            colorAustralien.a = alpha;
-            cloneAustralien.GetComponent<Renderer>().material.color = colorAustralien;
-            cloneAustralien.transform.position = Australien.transform.position;
-
-            GameObject cloneAegypten = Instantiate(Aegypten);
-            Color colorAegypten = cloneAegypten.GetComponent<Renderer>().material.color;
-            colorAegypten.a = alpha;
-            cloneAegypten.GetComponent<Renderer>().material.color = colorAegypten;
-            cloneAegypten.transform.position = Aegypten.transform.position;
-
-            GameObject cloneChina = Instantiate(China);
-            Color colorChina = cloneChina.GetComponent<Renderer>().material.color;
-            colorChina.a = alpha;
-            cloneChina.GetComponent<Renderer>().material.color = colorChina;
-            cloneChina.transform.position = China.transform.position;
-
-            cloneCounter++;
-        }
-    }
 }
