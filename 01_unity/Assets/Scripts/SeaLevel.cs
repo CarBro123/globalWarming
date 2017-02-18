@@ -114,11 +114,12 @@ public class SeaLevel : MonoBehaviour
             float percentage = timeSinceStart / (yearinsec * 0.9f);
 
             this.transform.position = new Vector3(0, Mathf.Lerp(oldY, newY, percentage), 0);    //Positionsänderung
+            oldY = Mathf.Lerp(oldY, newY, percentage);
 
             if (percentage >= 1.0f)                                                             //Exit
             {
                 islerping = false;
-                oldY = newY;
+                //oldY = newY;
             }
         }
 
