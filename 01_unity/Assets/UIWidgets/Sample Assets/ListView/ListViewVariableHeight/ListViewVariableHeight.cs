@@ -23,7 +23,7 @@ namespace UIWidgetsSamples {
 			}
 			firstYear = years[years.Length-1] - 1;
 			current = 0;
-			SetScrollValue(GetItemPosition(43),true);
+			SetScrollValue(GetItemPosition(44),true);
 		}
 
 		protected override void SetData(ListViewVariableHeightComponent component, ListViewVariableHeightItemDescription item)
@@ -82,11 +82,11 @@ namespace UIWidgetsSamples {
 		}
 
 		IEnumerator Scroll () {
-			float t = 0.1f;
-			while (Mathf.Abs(GetScrollValue() - GetItemPosition(ind)) > 0.015f) {
+			float t = 0.01f;
+			while (Mathf.Abs(GetScrollValue() - GetItemPosition(ind)) > 0.011f) {
 				SetScrollValue(Mathf.Lerp(GetScrollValue(), GetItemPosition(ind), t), true);
-				t += 0.1f;
-				yield return new WaitForEndOfFrame();
+				t += 0.01f;
+				yield return new WaitForSecondsRealtime(0.01f);
 			}
 		}
 	}
