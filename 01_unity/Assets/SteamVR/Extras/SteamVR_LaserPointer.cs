@@ -133,49 +133,49 @@ public class SteamVR_LaserPointer : MonoBehaviour
 
             switch (hit.collider.tag) {
             	case "Deutschland": 
-            		Debug.Log("DE");
+            	//	Debug.Log("DE");
 					previousTxt.enabled = false;
             		deu.enabled = true;
             		previousTxt = deu;
             		break;
             	case "Indien": 
-            		Debug.Log("IND");
+            	//	Debug.Log("IND");
 					previousTxt.enabled = false;
 					ind.enabled = true;
             		previousTxt = ind;
             		break;
             	case "USA": 
-            		Debug.Log("USA");
+            	//	Debug.Log("USA");
 					previousTxt.enabled = false;
 					usa.enabled = true;
             		previousTxt = usa;
             		break;
             	case "Russland": 
-            		Debug.Log("RUS");
+            	//	Debug.Log("RUS");
 					previousTxt.enabled = false;
 					rus.enabled = true;
             		previousTxt = rus;
             		break;
             	case "Brasilien": 
-            		Debug.Log("BRA");
+            	//	Debug.Log("BRA");
             		previousTxt.enabled = false;
 					bra.enabled = true;
             		previousTxt = bra;
             		break;
             	case "China": 
-            		Debug.Log("CHI");
+            	//	Debug.Log("CHI");
             		previousTxt.enabled = false;
 					chi.enabled = true;
             		previousTxt = chi;
             		break;
             	case "Australien": 
-            		Debug.Log("AUS");
+            	//	Debug.Log("AUS");
             		previousTxt.enabled = false;
 					aus.enabled = true;
             		previousTxt = aus;
             		break;
             	case "Agypten": 
-            		Debug.Log("AGY");
+            	//	Debug.Log("AGY");
             		previousTxt.enabled = false;
 					agy.enabled = true;
             		previousTxt = agy;
