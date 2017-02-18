@@ -17,6 +17,8 @@ public class Manager : MonoBehaviour {
 	public SeaLevel seaLevel;
 	public UIWidgetsSamples.ListViewVariableHeight newsTicker;
 
+	public delegate void DataHandler(int id, float emission, float temp);
+	public event DataHandler NewData;
     public GameObject Deutschland;
     public GameObject Indien;
     public GameObject USA;
@@ -109,7 +111,17 @@ public class Manager : MonoBehaviour {
         float aegyptenEmissionen = float.Parse(EmissionsByCountry.Find_Total_By_Year_Country(year.ToString(), "Egypt").Total);
         float aegyptenTemperatur = float.Parse(TemperaturesByCountry.Find_Temperature_By_Year_Country(year + "-08-01", "Egypt").AverageTemperature);
         Aegypten.GetComponent<Ball>().moveThis(year, aegyptenEmissionen, aegyptenTemperatur);
-        
+
+		if (NewData != null) {
+        	NewData(0, deutschlandEmissionen, deutschlandTemperatur);
+        	NewData(1, indienEmissionen, indienTemperatur);
+        	NewData(2, usaEmissionen, usaTemperatur);
+        	NewData(3, russlandEmissionen, russlandTemperatur);
+        	NewData(4, brasilienEmissionen, brasilienTemperatur);
+        	NewData(5, chinaEmissionen, chinaTemperatur);
+        	NewData(6, australienEmissionen, australienTemperatur);
+        	NewData(7, aegyptenEmissionen, aegyptenTemperatur);
+        }
 
     }
 
