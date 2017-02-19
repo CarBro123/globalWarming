@@ -32,6 +32,8 @@ public class Manager : MonoBehaviour {
     public AudioClip Erklaerung;
     public AudioClip Schluss;
 
+    private Boolean endAlreadyPlayed = false;
+
     int cloneCounter = 1950;
 
     void Awake () {
@@ -77,7 +79,10 @@ public class Manager : MonoBehaviour {
 	    seaLevel.WaterLevel(year,yearInSec);
 		if (year < 2014) MoveBalls(year);
 		if (year < 2017) newsTicker.OnYearChange(year);
-        if (year == 2017) this.GetComponent<AudioSource>().PlayOneShot(Schluss);
+        if (year == 2017 && !endAlreadyPlayed) {
+            this.GetComponent<AudioSource>().PlayOneShot(Schluss);
+            endAlreadyPlayed = true;
+        }
         //Debug.Log(year);
     }
 
