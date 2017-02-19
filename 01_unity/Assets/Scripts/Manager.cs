@@ -27,6 +27,10 @@ public class Manager : MonoBehaviour {
     public GameObject China;
     public GameObject Australien;
     public GameObject Aegypten;
+    
+    public AudioClip Einleitung;
+    public AudioClip Erklaerung;
+    public AudioClip Schluss;
 
     int cloneCounter = 1950;
 
@@ -39,8 +43,15 @@ public class Manager : MonoBehaviour {
     {
     	newsTicker.startYear = year;
         StartCoroutine(YearLoop());
-		
+        StartCoroutine(Audio());
 	}
+
+    IEnumerator Audio()
+    {
+        this.GetComponent<AudioSource>().PlayOneShot(Einleitung);
+        yield return new WaitForSeconds(Einleitung.length);
+        this.GetComponent<AudioSource>().PlayOneShot(Erklaerung);
+    }
 
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Space)) {
@@ -66,8 +77,9 @@ public class Manager : MonoBehaviour {
 	    seaLevel.WaterLevel(year,yearInSec);
 		if (year < 2014) MoveBalls(year);
 		if (year < 2017) newsTicker.OnYearChange(year);
-		//Debug.Log(year);
-	}
+        if (year == 2017) this.GetComponent<AudioSource>().PlayOneShot(Schluss);
+        //Debug.Log(year);
+    }
 
     IEnumerator YearLoop ()
     {
