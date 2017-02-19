@@ -17,7 +17,7 @@ public class TextUpdater : MonoBehaviour {
 
 	private void OnNewData (int country, float emiss, float temp) {
 		if (id != country) return;
-		info.text = name + "\n<size=75>Emission: "+emiss+" million tonnes"+"\nTemperature: "+temp+"°C</size>";
+		info.text = name + "\n<size=75>Emission: "+emiss+" Megatonnen"+"\nTemperatur: "+temp+"°C</size>";
 	}
 
 	void OnEnable () {
