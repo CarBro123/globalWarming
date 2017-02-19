@@ -65,7 +65,7 @@ public class Manager : MonoBehaviour {
 	public void UpdateScene () {
 	    seaLevel.WaterLevel(year,yearInSec);
 		if (year < 2014) MoveBalls(year);
-		newsTicker.OnYearChange(year);
+		if (year < 2017) newsTicker.OnYearChange(year);
 		//Debug.Log(year);
 	}
 
