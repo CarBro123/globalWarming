@@ -50,8 +50,6 @@ public class Manager : MonoBehaviour {
 
 	public void IncreaseYear () {
 		if (year < 2017) {
-			StopAllCoroutines();
-			StartCoroutine(YearLoop());
 			year++;
 			UpdateScene();
 		} 
@@ -59,8 +57,6 @@ public class Manager : MonoBehaviour {
 
 	public void DecreaseYear () {
 		if (year > 1950) {
-			StopAllCoroutines();
-			StartCoroutine(YearLoop());
 			year--;
 			UpdateScene();
 		} 
@@ -79,10 +75,7 @@ public class Manager : MonoBehaviour {
         {
             yield return new WaitForSeconds(yearInSec);
             while (isPaused) yield return new WaitForSeconds(0.5f);
-            if (year < 2017) {
-            	year++;
-            	UpdateScene();
-            }
+            if (year < 2017) IncreaseYear();
         }
     }
 
