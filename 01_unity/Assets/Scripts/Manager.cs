@@ -45,14 +45,13 @@ public class Manager : MonoBehaviour {
     {
     	newsTicker.startYear = year;
         StartCoroutine(YearLoop());
-		StartCoroutine(Audio());
+		GetComponent<AudioSource>().PlayOneShot(Einleitung);
+		Invoke("PlayAudio", Einleitung.length);
 	}
 
-    IEnumerator Audio()
+    void PlayAudio()
     {
-        this.GetComponent<AudioSource>().PlayOneShot(Einleitung);
-        yield return new WaitForSeconds(Einleitung.length);
-        this.GetComponent<AudioSource>().PlayOneShot(Erklaerung);
+        GetComponent<AudioSource>().PlayOneShot(Erklaerung);
     }
 
 	void Update () {
